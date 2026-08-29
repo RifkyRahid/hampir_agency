@@ -1,0 +1,66 @@
+// Prisma schema for the Digital Agency platform
+// Mirrors the structure defined in docs/schema.md
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String   @default("ADMIN") // Role for data entry
+  createdAt DateTime @default(now())
+}
+
+model Service {
+  id          String      @id @default(uuid())
+  title       String
+  description String
+  icon        String? // SVG path, URL, or identifier
+  isActive    Boolean     @default(true)
+  portfolios  Portfolio[] // Relation to Portfolio
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Portfolio {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String
+  imageUrl    String
+  gallery     String[] @default([])
+  link        String?
+  category    String // e.g., 'Web', 'Design', 'Video'
+  year        String?
+  challenge   String?
+  solution    String?
+  result      String?
+  client      String?
+  team        String?
+  serviceId   String?
+  service     Service? @relation(fields: [serviceId], references: [id])
+  createdAt   DateTime @default(now())
+}
+
+model SiteSettings {
+  id         String   @id @default("singleton")
+  headerLogo String?
+  footerLogo String?
+  updatedAt  DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
