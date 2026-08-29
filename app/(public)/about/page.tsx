@@ -74,7 +74,7 @@ export default function AboutPage() {
             variants={fadeUp}
             className="mb-6 inline-flex items-center rounded-full border border-border/70 bg-card/50 px-4 py-1.5 text-xs font-medium text-primary backdrop-blur-md"
           >
-            About Nexa.Studio
+            About Hampir.Agency
           </motion.span>
           <motion.h1
             variants={fadeUp}

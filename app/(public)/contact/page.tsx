@@ -95,13 +95,13 @@ export default function ContactPage() {
 
           <motion.a
             variants={fadeUp}
-            href="mailto:hello@nexa.studio"
+            href="mailto:hampiragency@gmail.com"
             className="group mt-8 flex w-fit items-center gap-3 text-lg font-medium text-foreground transition-colors hover:text-primary"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/25">
               <Mail className="h-5 w-5" />
             </span>
-            hello@nexa.studio
+            hampiragency@gmail.com
           </motion.a>
 
           <motion.a

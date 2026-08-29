@@ -49,7 +49,7 @@ export default function AdminLoginPage() {
             <Hexagon className="h-6 w-6" strokeWidth={2.2} />
           </span>
           <h1 className="mt-4 text-xl font-semibold tracking-tight text-foreground">
-            Nexa<span className="text-primary">.</span>Admin
+            HampirAgency<span className="text-primary">.</span>Admin
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
             Sign in to manage your agency content
@@ -66,7 +66,7 @@ export default function AdminLoginPage() {
               name="email"
               type="email"
               autoComplete="email"
-              placeholder="admin@nexa.studio"
+              placeholder="admin@hampir.agency"
               className={inputClass}
             />
           </div>
@@ -114,10 +114,10 @@ export default function AdminLoginPage() {
           </button>
         </form>
 
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Demo credentials: <span className="font-mono text-primary/80">admin@nexa.studio</span>{' '}
+        {/* <p className="mt-6 text-center text-xs text-muted-foreground">
+          Demo credentials: <span className="font-mono text-primary/80">admin@hampir.agency</span>{' '}
           / <span className="font-mono text-primary/80">admin123</span>
-        </p>
+        </p> */}
       </motion.div>
     </div>
   )

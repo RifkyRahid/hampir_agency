@@ -42,7 +42,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
           <Hexagon className="h-5 w-5" strokeWidth={2.2} />
         </span>
         <span className="text-base font-semibold tracking-tight text-foreground">
-          Nexa<span className="text-primary">.</span>Admin
+          Hampir<span className="text-primary">.</span>Admin
         </span>
       </div>
 
@@ -119,7 +119,7 @@ export default function AdminLayout({
             <Hexagon className="h-4 w-4" strokeWidth={2.2} />
           </span>
           <span className="text-sm font-semibold tracking-tight text-foreground">
-            Nexa<span className="text-primary">.</span>Admin
+            Hampir<span className="text-primary">.</span>Admin
           </span>
         </div>
         <button

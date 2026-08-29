@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@nexa.studio'
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@hampir.agency'
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
 const SESSION_COOKIE = 'admin_session'
 

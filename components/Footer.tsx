@@ -28,7 +28,7 @@ export default function Footer({ footerLogo }: { footerLogo?: string | null }) {
             ) : (
               <>
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/30"><Hexagon className="h-4 w-4" strokeWidth={2.2} /></span>
-                <span className="text-base font-semibold tracking-tight text-foreground">Nexa<span className="text-primary">.</span>Studio</span>
+                <span className="text-base font-semibold tracking-tight text-foreground">HAMPIR <span className="text-primary">.</span>AGENCY</span>
               </>
             )}
           </Link>
@@ -46,7 +46,7 @@ export default function Footer({ footerLogo }: { footerLogo?: string | null }) {
 
       <div className="border-t border-border/60">
         <div className="container flex flex-col items-center justify-between gap-2 py-5 text-xs text-muted-foreground md:flex-row">
-          <p>&copy; {new Date().getFullYear()} Nexa.Studio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Hampir.Agency. All rights reserved.</p>
           <p className="font-mono text-primary/70">1.0456° N, 104.0305° E</p>
         </div>
       </div>

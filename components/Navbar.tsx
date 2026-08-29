@@ -28,7 +28,7 @@ function Logo({ headerLogo }: { headerLogo?: string | null }) {
       <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/30 transition-all group-hover:bg-primary/20 group-hover:ring-primary/50">
         <Hexagon className="h-5 w-5" strokeWidth={2.2} />
       </span>
-      <span className="text-lg font-semibold tracking-tight text-foreground">Nexa<span className="text-primary">.</span>Studio</span>
+      <span className="text-lg font-semibold tracking-tight text-foreground">Hampir<span className="text-primary">.</span>Agency</span>
     </>
   )
 }
