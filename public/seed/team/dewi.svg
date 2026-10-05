@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <rect width="800" height="1000" fill="#0E182B"/>
+  <circle cx="400" cy="420" r="180" fill="#FFFFFF" fill-opacity="0.08"/>
+  <text x="400" y="460" font-family="Georgia, serif" font-size="120" font-weight="600" fill="#FFFFFF" text-anchor="middle">DL</text>
+  <text x="400" y="740" font-family="system-ui, sans-serif" font-size="44" font-weight="600" fill="#FFFFFF" text-anchor="middle">Dewi Lestari</text>
+  <text x="400" y="800" font-family="system-ui, sans-serif" font-size="28" fill="#E0A84B" text-anchor="middle">Data Entry & Operations</text>
+</svg>

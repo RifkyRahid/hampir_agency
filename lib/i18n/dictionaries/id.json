@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "services": "Layanan",
+    "portfolio": "Karya",
+    "about": "Tentang Kami",
+    "contact": "Kontak",
+    "letsTalk": "Konsultasi Proyek"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Agensi Digital Full-Service · Batam",
+      "title": "Membangun produk digital yang fungsional, terukur, dan bermakna.",
+      "description": "Pengembangan web & aplikasi, identitas visual, produksi foto/video, serta operasional data yang terintegrasi di bawah satu tim.",
+      "startProject": "Mulai Proyek",
+      "viewWork": "Lihat Portofolio"
+    },
+    "trust": {
+      "experts": "4 Disiplin Ahli",
+      "fullService": "Layanan Terpadu",
+      "location": "Berbasis di Batam",
+      "response": "Respons 1×24 Jam"
+    },
+    "services": {
+      "eyebrow": "Keahlian Kami",
+      "title": "Solusi digital terpadu untuk bisnis Anda",
+      "description": "Empat disiplin utama yang bekerja sinergis mewujudkan visi brand Anda.",
+      "viewAll": "Jelajahi Semua Layanan"
+    },
+    "featured": {
+      "eyebrow": "Karya Pilihan",
+      "title": "Studi kasus & proyek terpilih",
+      "description": "Dedikasi kami dalam menghadirkan solusi nyata bagi setiap mitra klien.",
+      "viewAll": "Lihat Semua Karya"
+    },
+    "process": {
+      "eyebrow": "Alur Kerja",
+      "title": "Dari konsep hingga eksekusi nyata",
+      "description": "Metode kerja terstruktur yang transparan dan tepat waktu di setiap tahap.",
+      "step1Title": "1. Diskusi & Riset",
+      "step1Desc": "Memahami model bisnis, target audiens, dan tujuan strategis proyek Anda.",
+      "step2Title": "2. Perancangan & Desain",
+      "step2Desc": "Merumuskan alur pengguna, arsitektur data, dan visual yang presisi.",
+      "step3Title": "3. Pengembangan & Produksi",
+      "step3Desc": "Membangun dengan teknologi modern atau memproduksi konten berkualitas tinggi.",
+      "step4Title": "4. Evaluasi & Rilis",
+      "step4Desc": "Pengujian menyeluruh, peluncuran tepat waktu, dan pendampingan berkelanjutan."
+    },
+    "cta": {
+      "title": "Siap mewujudkan proyek digital Anda berikutnya?",
+      "description": "Diskusikan ide dan kebutuhan Anda bersama tim kami. Tanpa komitmen awal, kami bantu petakan solusinya.",
+      "button": "Hubungi Kami Sekarang"
+    }
+  },
+  "services": {
+    "eyebrow": "Layanan Agensi",
+    "title": "Solusi terukur untuk setiap skala kebutuhan",
+    "description": "Mulai dari kode, visual, hingga tata kelola data operasional.",
+    "deliverables": "Cakupan Pekerjaan",
+    "startProject": "Konsultasikan Layanan Ini"
+  },
+  "portfolio": {
+    "eyebrow": "Portofolio",
+    "title": "Karya dan studi kasus",
+    "description": "Koleksi proyek nyata yang kami rancang dan bangun dengan standar tinggi.",
+    "all": "Semua",
+    "empty": "Belum ada proyek pada kategori ini.",
+    "viewCaseStudy": "Lihat Studi Kasus"
+  },
+  "caseStudy": {
+    "back": "Kembali ke Portofolio",
+    "client": "Klien",
+    "discipline": "Disiplin",
+    "team": "Tim Terlibat",
+    "year": "Tahun",
+    "visitProject": "Kunjungi Proyek Langsung",
+    "challenge": "Tantangan",
+    "solution": "Pendekatan & Solusi",
+    "result": "Hasil & Dampak",
+    "gallery": "Galeri Visual Proyek",
+    "nextProject": "Proyek Berikutnya"
+  },
+  "about": {
+    "eyebrow": "Tentang Hampir.Agency",
+    "title": "Kolektif praktisi yang mengutamakan kualitas eksekusi.",
+    "description": "Kami adalah tim yang menggabungkan rekayasa perangkat lunak, desain merek, visual media, dan kedisiplinan operasional.",
+    "missionTitle": "Misi Kami",
+    "missionDesc": "Membantu brand dan perusahaan bertransformasi melalui kehadiran digital yang solid, estetis, dan memberikan dampak bisnis nyata.",
+    "teamTitle": "Tim Inti",
+    "teamSubtitle": "Empat peran utama di balik setiap karya yang kami rilis."
+  },
+  "contact": {
+    "eyebrow": "Hubungi Kami",
+    "title": "Mari diskusikan rencana Anda bersama kami",
+    "description": "Kirimkan detail kebutuhan proyek Anda atau hubungi langsung via WhatsApp. Kami akan merespons dalam 1×24 jam.",
+    "form": {
+      "name": "Nama Lengkap",
+      "namePlaceholder": "Nama Anda",
+      "email": "Alamat Email",
+      "emailPlaceholder": "nama@perusahaan.com",
+      "phone": "Nomor WhatsApp (Opsional)",
+      "phonePlaceholder": "0812...",
+      "interest": "Layanan yang Diminati (Opsional)",
+      "interestPlaceholder": "Pilih layanan...",
+      "message": "Detail Proyek",
+      "messagePlaceholder": "Ceritakan ringkas mengenai tujuan, timeline, atau lingkup proyek Anda...",
+      "submit": "Kirim Pesan",
+      "sending": "Mengirim Pesan...",
+      "successTitle": "Pesan Berhasil Terkirim!",
+      "successDesc": "Terima kasih telah menghubungi Hampir.Agency. Tim kami akan segera meninjau dan membalas pesan Anda.",
+      "sendAnother": "Kirim Pesan Lain"
+    },
+    "direct": "Saluran Langsung",
+    "whatsappBtn": "Chat WhatsApp Langsung",
+    "locationTitle": "Lokasi Agensi",
+    "city": "Batam, Kepulauan Riau, Indonesia",
+    "hours": "Senin – Jumat: 09:00 – 17:00 WIB"
+  },
+  "footer": {
+    "tagline": "Agensi digital full-service berbasis Batam, merancang dan membangun pengalaman digital berkualitas tinggi.",
+    "navigation": "Navigasi",
+    "contact": "Kontak",
+    "rights": "Hak cipta dilindungi undang-undang.",
+    "cityNote": "Batam, Indonesia"
+  },
+  "common": {
+    "readMore": "Selengkapnya",
+    "close": "Tutup",
+    "loading": "Memuat...",
+    "errorOccurred": "Terjadi kesalahan. Silakan coba kembali."
+  }
+}
+

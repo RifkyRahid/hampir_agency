@@ -2,43 +2,51 @@
 
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@hampir.agency'
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
-const SESSION_COOKIE = 'admin_session'
+import bcrypt from 'bcryptjs'
+import { prisma } from '@/lib/prisma'
+import { createSessionToken, SESSION_COOKIE } from '@/lib/auth'
 
 export type LoginResult = { error?: string; success?: boolean }
 
-/**
- * Simple email/password login.
- * Static validation for now — swap to a Prisma `User` lookup once the
- * PostgreSQL database is seeded.
- *
- * Sets an HTTP-only session cookie and returns { success } so the client
- * can perform a full navigation (reliable on React 18.3 / Next 15).
- */
 export async function loginAction(formData: FormData): Promise<LoginResult> {
   const email = String(formData.get('email') || '').trim().toLowerCase()
   const password = String(formData.get('password') || '')
 
   if (!email || !password) {
-    return { error: 'Email and password are required.' }
+    return { error: 'Email dan kata sandi wajib diisi.' }
   }
 
-  if (email !== ADMIN_EMAIL.toLowerCase() || password !== ADMIN_PASSWORD) {
-    return { error: 'Invalid credentials. Please try again.' }
+  try {
+    const user = await prisma.user.findUnique({ where: { email } })
+    if (!user) {
+      return { error: 'Kredensial tidak valid. Silakan coba kembali.' }
+    }
+
+    const isValid = await bcrypt.compare(password, user.passwordHash)
+    if (!isValid) {
+      return { error: 'Kredensial tidak valid. Silakan coba kembali.' }
+    }
+
+    const token = await createSessionToken({
+      sub: user.id,
+      email: user.email,
+      role: user.role,
+    })
+
+    const cookieStore = await cookies()
+    cookieStore.set(SESSION_COOKIE, token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    })
+
+    return { success: true }
+  } catch (e) {
+    console.error('loginAction error:', e)
+    return { error: 'Terjadi kendala saat memproses login.' }
   }
-
-  const cookieStore = await cookies()
-  cookieStore.set(SESSION_COOKIE, 'authenticated', {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    path: '/',
-    maxAge: 60 * 60 * 24 * 7, // 7 days
-  })
-
-  return { success: true }
 }
 
 export async function logoutAction(): Promise<void> {
@@ -46,3 +54,4 @@ export async function logoutAction(): Promise<void> {
   cookieStore.delete(SESSION_COOKIE)
   redirect('/admin/login')
 }
+

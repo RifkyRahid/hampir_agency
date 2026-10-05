@@ -12,7 +12,10 @@ async function getMessages() {
       id: m.id,
       name: m.name,
       email: m.email,
+      phone: m.phone,
+      interest: m.interest,
       message: m.message,
+      locale: m.locale,
       isRead: m.isRead,
       createdAt: m.createdAt.toISOString(),
     }))
@@ -26,3 +29,4 @@ export default async function AdminMessagesPage() {
   const messages = await getMessages()
   return <MessagesManager messages={messages} />
 }
+

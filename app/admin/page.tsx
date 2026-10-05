@@ -1,113 +1,193 @@
-import { Package, FolderKanban, Mail, TrendingUp, Clock } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
+import Link from 'next/link'
+import { Package, FolderKanban, Mail, Users, ArrowUpRight, Clock, Plus } from 'lucide-react'
+import { prisma } from '@/lib/prisma'
 
-type Stat = {
-  label: string
-  value: number
-  hint: string
-  icon: LucideIcon
-  span: string
-}
+export const dynamic = 'force-dynamic'
 
-// Mock numbers — will be replaced with Prisma counts later
-const stats: Stat[] = [
-  {
-    label: 'Total Services',
-    value: 4,
-    hint: 'Active service offerings',
-    icon: Package,
-    span: 'md:col-span-1',
-  },
-  {
-    label: 'Total Portfolios',
-    value: 4,
-    hint: 'Published case studies',
-    icon: FolderKanban,
-    span: 'md:col-span-1',
-  },
-  {
-    label: 'Unread Messages',
-    value: 3,
-    hint: 'Awaiting your reply',
-    icon: Mail,
-    span: 'md:col-span-1',
-  },
-]
+export default async function AdminDashboard() {
+  const [
+    serviceCount,
+    portfolioCount,
+    unreadCount,
+    teamCount,
+    recentPortfolios,
+    recentMessages,
+  ] = await Promise.all([
+    prisma.service.count({ where: { isActive: true } }),
+    prisma.portfolio.count({ where: { isPublished: true } }),
+    prisma.contactMessage.count({ where: { isRead: false } }),
+    prisma.teamMember.count({ where: { isActive: true } }),
+    prisma.portfolio.findMany({
+      orderBy: { createdAt: 'desc' },
+      take: 4,
+      select: { id: true, titleId: true, slug: true, createdAt: true },
+    }),
+    prisma.contactMessage.findMany({
+      orderBy: { createdAt: 'desc' },
+      take: 4,
+      select: { id: true, name: true, email: true, createdAt: true, isRead: true },
+    }),
+  ])
 
-const recent = [
-  { title: 'Mecca Madina Auto Syariah', type: 'Portfolio', date: 'Jun 12, 2025' },
-  { title: 'Web & App Development', type: 'Service', date: 'Jun 10, 2025' },
-  { title: 'New message from a visitor', type: 'Message', date: 'Jun 09, 2025' },
-]
+  const stats = [
+    {
+      label: 'Layanan Aktif',
+      value: serviceCount,
+      hint: 'Tampil di website publik',
+      icon: Package,
+      href: '/admin/services',
+    },
+    {
+      label: 'Portofolio Terbit',
+      value: portfolioCount,
+      hint: 'Studi kasus terpublikasi',
+      icon: FolderKanban,
+      href: '/admin/portfolio',
+    },
+    {
+      label: 'Pesan Belum Dibaca',
+      value: unreadCount,
+      hint: 'Menunggu respon tim',
+      icon: Mail,
+      href: '/admin/messages',
+      alert: unreadCount > 0,
+    },
+    {
+      label: 'Anggota Tim',
+      value: teamCount,
+      hint: 'Profil tim yang aktif',
+      icon: Users,
+      href: '/admin/team',
+    },
+  ]
 
-export default function AdminDashboard() {
   return (
-    <div>
+    <div className="space-y-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-          Dashboard
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Welcome back — here&apos;s an overview of your agency content.
-        </p>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-foreground">
+            Ringkasan Dashboard
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Selamat datang di panel pengelola konten resmi Hampir.Agency.
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/admin/portfolio"
+            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-xs"
+          >
+            <Plus className="h-3.5 w-3.5" />
+            <span>Portofolio Baru</span>
+          </Link>
+        </div>
       </div>
 
-      {/* Stat Cards (Bento) */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      {/* Stat Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => {
           const Icon = stat.icon
           return (
-            <div
+            <Link
               key={stat.label}
-              className={`group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 p-6 backdrop-blur-xl ${stat.span}`}
+              href={stat.href}
+              className="group rounded-2xl border border-border bg-card p-6 hover:border-primary/50 hover:shadow-sm transition-all"
             >
-              <div className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-primary/10 blur-3xl transition-opacity duration-500 group-hover:opacity-90" />
-              <div className="relative flex items-start justify-between">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/25">
+              <div className="flex items-center justify-between">
+                <span
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+                    stat.alert ? 'bg-destructive/10 text-destructive' : 'bg-primary-soft text-primary'
+                  }`}
+                >
                   <Icon className="h-5 w-5" />
                 </span>
-                <TrendingUp className="h-4 w-4 text-primary/60" />
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
-              <p className="relative mt-5 text-4xl font-semibold tracking-tight text-foreground">
+              <p className="mt-4 text-3xl font-serif font-bold text-foreground">
                 {stat.value}
               </p>
-              <p className="relative mt-1 text-sm font-medium text-foreground">
+              <p className="mt-0.5 text-xs font-semibold text-foreground">
                 {stat.label}
               </p>
-              <p className="relative mt-0.5 text-xs text-muted-foreground">
+              <p className="mt-0.5 text-[11px] text-muted-foreground">
                 {stat.hint}
               </p>
-            </div>
+            </Link>
           )
         })}
       </div>
 
-      {/* Recent activity */}
-      <div className="mt-8 overflow-hidden rounded-3xl border border-border/60 bg-card/40 backdrop-blur-xl">
-        <div className="flex items-center gap-2 border-b border-border/60 px-6 py-4">
-          <Clock className="h-4 w-4 text-primary" />
-          <h2 className="text-sm font-semibold text-foreground">
-            Recent activity
-          </h2>
-        </div>
-        <div className="divide-y divide-border/60">
-          {recent.map((row, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-between px-6 py-4 text-sm"
-            >
-              <div className="flex items-center gap-3">
-                <span className="rounded-full border border-border/60 bg-background/40 px-2.5 py-1 text-xs text-primary/80">
-                  {row.type}
-                </span>
-                <span className="text-foreground">{row.title}</span>
-              </div>
-              <span className="text-xs text-muted-foreground">{row.date}</span>
+      {/* Two Column Activity: Recent Portfolios & Recent Messages */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Recent Portfolios */}
+        <div className="rounded-2xl border border-border bg-card overflow-hidden">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-surface/40">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-foreground">
+              <FolderKanban className="h-4 w-4 text-primary" />
+              <span>Portofolio Terbaru</span>
             </div>
-          ))}
+            <Link href="/admin/portfolio" className="text-xs text-primary font-medium hover:underline">
+              Semua
+            </Link>
+          </div>
+          <div className="divide-y divide-border">
+            {recentPortfolios.length === 0 ? (
+              <p className="p-6 text-xs text-muted-foreground text-center">Belum ada portofolio</p>
+            ) : (
+              recentPortfolios.map((p) => (
+                <div key={p.id} className="p-4 px-6 flex items-center justify-between hover:bg-surface/30 transition-colors">
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{p.titleId}</p>
+                    <p className="text-xs font-mono text-muted-foreground">/{p.slug}</p>
+                  </div>
+                  <span className="text-[11px] text-muted-foreground">
+                    {new Date(p.createdAt).toLocaleDateString('id-ID', { dateStyle: 'medium' })}
+                  </span>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+
+        {/* Recent Messages */}
+        <div className="rounded-2xl border border-border bg-card overflow-hidden">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-surface/40">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-foreground">
+              <Mail className="h-4 w-4 text-primary" />
+              <span>Pesan Masuk Terbaru</span>
+            </div>
+            <Link href="/admin/messages" className="text-xs text-primary font-medium hover:underline">
+              Semua
+            </Link>
+          </div>
+          <div className="divide-y divide-border">
+            {recentMessages.length === 0 ? (
+              <p className="p-6 text-xs text-muted-foreground text-center">Belum ada pesan</p>
+            ) : (
+              recentMessages.map((m) => (
+                <div key={m.id} className="p-4 px-6 flex items-center justify-between hover:bg-surface/30 transition-colors">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-semibold text-foreground">{m.name}</p>
+                      {!m.isRead && (
+                        <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
+                          Baru
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-muted-foreground">{m.email}</p>
+                  </div>
+                  <span className="text-[11px] text-muted-foreground">
+                    {new Date(m.createdAt).toLocaleDateString('id-ID', { dateStyle: 'medium' })}
+                  </span>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </div>
   )
 }
+

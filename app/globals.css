@@ -4,75 +4,90 @@
 
 @layer base {
   :root {
-    /* Dark Mode is the primary/default theme (per design.md) */
-    --background: 210 27% 6%; /* #0B0F13 - premium dark charcoal/navy */
-    --foreground: 0 0% 100%; /* crisp white */
-    --card: 217 22% 12%; /* slightly lighter glass surface */
-    --card-foreground: 0 0% 100%;
-    --popover: 217 22% 12%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 151 100% 45%; /* neon green #00E676 */
-    --primary-foreground: 210 27% 6%;
-    --secondary: 217 22% 16%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 217 22% 16%;
-    --muted-foreground: 215 20% 65%; /* #94A3B8 */
-    --accent: 187 85% 53%; /* cyan #22D3EE */
-    --accent-foreground: 210 27% 6%;
-    --destructive: 0 72% 51%;
+    /* Light Mode is DEFAULT */
+    --background: 210 40% 98%; /* #F8FAFC */
+    --foreground: 222 47% 11%; /* #0F172A */
+    
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 222 47% 11%;
+    
+    --surface: 216 45% 96%; /* #EEF3FA */
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 213 94% 31%; /* #054697 Brand Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 216 67% 94%; /* #E6EEF9 */
+    
+    --secondary: 216 33% 94%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%; /* #64748B */
+    
+    --accent: 36 72% 42%; /* #B7791F Warm Amber */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 18 89% 41%; /* #C2410C */
     --destructive-foreground: 0 0% 100%;
-    --border: 215 25% 27%; /* subtle thin gray #334155 */
-    --input: 215 25% 27%;
-    --ring: 151 100% 45%;
+    
+    --border: 214 32% 91%; /* #E2E8F0 */
+    --input: 214 32% 91%;
+    --ring: 213 94% 31%;
+    
     --radius: 0.75rem;
-    --chart-1: 151 100% 45%;
-    --chart-2: 187 85% 53%;
-    --chart-3: 217 91% 60%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 280 65% 60%;
-    --sidebar-background: 210 27% 8%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 151 100% 45%;
-    --sidebar-primary-foreground: 210 27% 6%;
-    --sidebar-accent: 217 22% 16%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 215 25% 27%;
-    --sidebar-ring: 151 100% 45%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 213 94% 31%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 45% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 213 94% 31%;
   }
 
   .dark {
-    --background: 210 27% 6%;
-    --foreground: 0 0% 100%;
-    --card: 217 22% 12%;
-    --card-foreground: 0 0% 100%;
-    --popover: 217 22% 12%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 151 100% 45%;
-    --primary-foreground: 210 27% 6%;
-    --secondary: 217 22% 16%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 217 22% 16%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 187 85% 53%;
-    --accent-foreground: 210 27% 6%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 215 25% 27%;
-    --input: 215 25% 27%;
-    --ring: 151 100% 45%;
-    --chart-1: 151 100% 45%;
-    --chart-2: 187 85% 53%;
-    --chart-3: 217 91% 60%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 280 65% 60%;
-    --sidebar-background: 210 27% 8%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 151 100% 45%;
-    --sidebar-primary-foreground: 210 27% 6%;
-    --sidebar-accent: 217 22% 16%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 215 25% 27%;
-    --sidebar-ring: 151 100% 45%;
+    --background: 220 48% 8%; /* #0B1220 */
+    --foreground: 214 55% 94%; /* #E6EDF7 */
+    
+    --card: 222 45% 12%; /* #111A2E */
+    --card-foreground: 214 55% 94%;
+    
+    --surface: 220 45% 11%; /* #0F1829 */
+    
+    --popover: 222 45% 12%;
+    --popover-foreground: 214 55% 94%;
+    
+    --primary: 213 67% 58%; /* #4F8EDB Lighter Blue for contrast */
+    --primary-foreground: 220 48% 8%;
+    --primary-soft: 222 54% 19%; /* #16264A */
+    
+    --secondary: 219 38% 16%;
+    --secondary-foreground: 214 55% 94%;
+    
+    --muted: 217 38% 19%;
+    --muted-foreground: 215 20% 65%; /* #94A3B8 */
+    
+    --accent: 37 73% 58%; /* #E0A84B */
+    --accent-foreground: 220 48% 8%;
+    
+    --destructive: 18 84% 65%; /* #F08A5D */
+    --destructive-foreground: 220 48% 8%;
+    
+    --border: 219 38% 19%; /* #1E2A44 */
+    --input: 219 38% 19%;
+    --ring: 213 67% 58%;
+
+    --sidebar-background: 222 45% 10%;
+    --sidebar-foreground: 214 55% 94%;
+    --sidebar-primary: 213 67% 58%;
+    --sidebar-primary-foreground: 220 48% 8%;
+    --sidebar-accent: 220 45% 14%;
+    --sidebar-accent-foreground: 214 55% 94%;
+    --sidebar-border: 219 38% 19%;
+    --sidebar-ring: 213 67% 58%;
   }
 }
 
@@ -82,6 +97,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-color: #0b0f13;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-fraunces), Georgia, serif;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
   }
 }
+

@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <rect width="1600" height="900" fill="#0F1A30"/>
+  <rect x="40" y="40" width="1520" height="820" fill="none" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="2" rx="24"/>
+  <text x="100" y="420" font-family="system-ui, sans-serif" font-size="32" font-weight="600" fill="#E0A84B" letter-spacing="4">BRAND IDENTITY</text>
+  <text x="100" y="500" font-family="Georgia, serif" font-size="64" font-weight="600" fill="#FFFFFF">Fintech App Rebrand</text>
+  <text x="100" y="560" font-family="system-ui, sans-serif" font-size="24" fill="#94A3B8">Hampir.Agency Case Study</text>
+</svg>

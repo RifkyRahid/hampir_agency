@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "letsTalk": "Let's Talk"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Full-Service Digital Agency · Batam",
+      "title": "Crafting digital products that are functional, scalable, and meaningful.",
+      "description": "Web & application engineering, brand design, photo/video production, and data operations—seamlessly delivered under one roof.",
+      "startProject": "Start a Project",
+      "viewWork": "View Selected Work"
+    },
+    "trust": {
+      "experts": "4 Core Disciplines",
+      "fullService": "Full-Service Team",
+      "location": "Batam-Based",
+      "response": "24h Response Time"
+    },
+    "services": {
+      "eyebrow": "Our Capabilities",
+      "title": "End-to-end digital solutions for modern businesses",
+      "description": "Four core disciplines working synergistically to bring your vision to life.",
+      "viewAll": "Explore All Services"
+    },
+    "featured": {
+      "eyebrow": "Selected Work",
+      "title": "Case studies & featured projects",
+      "description": "A glimpse of real solutions we've designed and delivered for our clients.",
+      "viewAll": "View All Case Studies"
+    },
+    "process": {
+      "eyebrow": "Our Process",
+      "title": "From initial concept to flawless execution",
+      "description": "A structured, transparent workflow ensuring predictability at every stage.",
+      "step1Title": "1. Discovery & Research",
+      "step1Desc": "Understanding your business model, target audience, and strategic goals.",
+      "step2Title": "2. Architecture & Design",
+      "step2Desc": "Crafting intuitive user journeys, solid schemas, and refined visual design.",
+      "step3Title": "3. Engineering & Production",
+      "step3Desc": "Building with modern web tech and producing broadcast-grade creative media.",
+      "step4Title": "4. QA & Delivery",
+      "step4Desc": "Rigorous quality testing, timely launch, and dependable ongoing support."
+    },
+    "cta": {
+      "title": "Ready to bring your next digital product to life?",
+      "description": "Let's discuss your project goals. No upfront commitment—we will help outline the right roadmap for you.",
+      "button": "Get in Touch Today"
+    }
+  },
+  "services": {
+    "eyebrow": "Agency Services",
+    "title": "Measurable solutions tailored to your scale",
+    "description": "From clean code and brand identities to operational data management.",
+    "deliverables": "Deliverables & Scope",
+    "startProject": "Inquire About This Service"
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "title": "Selected projects and case studies",
+    "description": "A curated collection of client work engineered to the highest standard.",
+    "all": "All",
+    "empty": "No projects found in this category.",
+    "viewCaseStudy": "View Case Study"
+  },
+  "caseStudy": {
+    "back": "Back to Portfolio",
+    "client": "Client",
+    "discipline": "Discipline",
+    "team": "Team & Disciplines",
+    "year": "Year",
+    "visitProject": "Visit Live Project",
+    "challenge": "The Challenge",
+    "solution": "Solution & Approach",
+    "result": "The Outcome & Impact",
+    "gallery": "Project Visual Gallery",
+    "nextProject": "Next Project"
+  },
+  "about": {
+    "eyebrow": "About Hampir.Agency",
+    "title": "A tight-knit team obsessing over quality and execution.",
+    "description": "We blend fullstack engineering, brand design, media production, and disciplined back-office operations.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "Empowering ambitious brands with a solid, high-converting digital presence that generates real business impact.",
+    "teamTitle": "Core Team",
+    "teamSubtitle": "The four specialists behind every product we build."
+  },
+  "contact": {
+    "eyebrow": "Contact Us",
+    "title": "Let's talk about your next project",
+    "description": "Drop us your requirements or reach out directly on WhatsApp. We typically reply within 24 hours.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your name",
+      "email": "Email Address",
+      "emailPlaceholder": "you@company.com",
+      "phone": "WhatsApp Number (Optional)",
+      "phonePlaceholder": "+62...",
+      "interest": "Service of Interest (Optional)",
+      "interestPlaceholder": "Select a service...",
+      "message": "Project Details",
+      "messagePlaceholder": "Tell us briefly about your goals, timeline, or scope...",
+      "submit": "Send Message",
+      "sending": "Sending Message...",
+      "successTitle": "Message Sent Successfully!",
+      "successDesc": "Thank you for reaching out. Our team will review your message and get back to you shortly.",
+      "sendAnother": "Send Another Message"
+    },
+    "direct": "Direct Channels",
+    "whatsappBtn": "Chat on WhatsApp Directly",
+    "locationTitle": "Agency Location",
+    "city": "Batam, Riau Islands, Indonesia",
+    "hours": "Monday – Friday: 09:00 – 17:00 WIB"
+  },
+  "footer": {
+    "tagline": "Full-service digital agency in Batam, crafting pixel-perfect web experiences, branding, and media.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "cityNote": "Batam, Indonesia"
+  },
+  "common": {
+    "readMore": "Read more",
+    "close": "Close",
+    "loading": "Loading...",
+    "errorOccurred": "Something went wrong. Please try again."
+  }
+}
+
